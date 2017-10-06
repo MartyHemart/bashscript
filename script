@@ -1,0 +1,131 @@
+RED='\033[0;31m'
+NC='\033[0m'
+UPurple='\033[0;35m'
+On_Yellow='\033[0;33m'
+On_Green='\033[42m'
+On_IBlue='\033[44m'
+Cyan='\033[0;36m'
+
+# No Color
+
+#                Introduction                        #
+
+
+echo -e "${On_IBlue}     ______"
+echo "                 /     /\\"
+echo "                /     /##\\"
+echo "               /     /####\\"
+echo "              /     /######\\"
+echo "             /     /########\\"
+echo "            /     /##########\\"
+echo "           /     /#####/\\#####\\"
+echo "          /     /#####/++\\#####\\"
+echo "         /     /#####/++++\\#####\\"
+echo "        /     /#####/\+++++\\#####\\"
+echo "       /     /#####/  \+++++\\#####\\"
+echo "      /     /#####/    \+++++\\#####\\"
+echo "     /     /#####/      \+++++\\#####\\"
+echo "    /     /#####/        \+++++\\#####\\"
+echo "   /     /#####/__________\+++++\\#####\\"
+echo "  /                        \+++++\\#####\\"
+echo " /__________________________\+++++\\####/"
+echo " \+++++++++++++++++++++++++++++++++\\##/"
+echo "  \+++++++++++++++++++++++++++++++++\\/"
+echo "   \`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`";
+
+
+echo " |¯/ | |¯ |\| \ | |¯ |\| | | |¯   /¯\   \ | |¯| | | |¯  "
+echo " |¯/ | |¯ | |  \| |¯ | | |_| |¯   |¯|    \| |_| |_|  ¯| "
+echo "  ¯     ¯          ¯          ¯                      ¯  "
+
+
+echo -e " ${RED}Bievenue jeune sorcier(e), voici le moment d'avoir t'as premiere baguette magique, Comment tu t'appel ? ${NC}" $cf
+# rajout de couleur rouge
+read prenom
+     echo "$prenom ?"
+echo -e "${Cyan}Okey !!! Enfin... bref c'est pas important${NC}"
+
+echo -p  "taper OK ou NO pour continuer: " $cf
+read ok
+     echo "$ok"
+
+     if [ "$ok" = "ok" ] || [ "$ok" = "OK" ]; then
+        echo -e  "${Cyan}ok c'est parti !!${NC}"
+   elif [ "$ok" = "no" ] || [ "$ok" = "NO" ]; then
+        echo "ben ciao mon coco"$cf
+   else
+   echo "ta rien choisi aurevoir" $cf
+   fi
+
+
+#            Le questionnaire           #
+
+
+echo  "# Un Questionnaire que pour toi# " $cf && echo  "#Repondre par oui ou non#" $cf
+
+echo -e "${RED}Es-tu gentil ? ${NC}"$cf
+read ouinon
+
+if [ "$ouinon" = "oui" ] || [ "$ouinon" = "OUI" ]; then
+     echo -e "${Cyan}d'accord, c'est magnifique${NC}"$cf
+elif [ "$ouinon" = "non" ] || [ "$ouinon" = "NON" ]; then
+     echo -e"${Cyan}d'accord, passons${NC}"$cf
+fi
+
+echo -e " ${RED}Aime tu vraiment la magie ? ${NC} "$cf
+read ouinon
+
+if [ "$ouinon" = "oui" ] || [ "$ouinon" = "OUI" ]; then
+     echo -e " ${Cyan}c'est quand même mieux pour avoir une baguette${NC}"$cf
+elif [ "$ouinon" = "non" ] || [ "$ouinon" = "NON" ]; then
+     echo -e"${Cyan}Pourquoi tu es là alors ?${NC}"$cf
+fi
+
+
+
+echo  "#Repondre par bts ou sap#" $cf
+echo -e " ${RED}preferez vous passer un BTS Sorcelerie ou un SAP Potion magique?${NC} "$cf
+read ouinon
+
+if [ "$ouinon" = "bts" ] || [ "$ouinon" = "BTS" ]; then
+     echo -e "${Cyan}Très bon choix si tu aime les combats${NC}"$cf
+elif [ "$ouinon" = "sap" ] || [ "$ouinon" = "SAP" ]; then
+     echo -e"${Cyan}Très bon choix si tu aimes empoisenner tes camarades${NC}"$cf
+fi
+
+echo -e " ${RED}dite nous tous, votre film de magie preferez:${NC} "
+options=("harry Potter" "le hobbit" "les animaux fantastiques" "Quit")
+film=""
+select opt in "${options[@]}"
+do
+    case $opt in
+        "harry Potter") film="harrypotter";break;;
+
+
+        "le hobbit") film="lehobbit";break;;
+
+
+        "les animaux fantastiques") film="lesanimauxfantastique";break;;
+
+
+        "Quit")
+            break
+            ;;
+        *) echo mauvaise réponse;;
+    esac
+done
+if [[ "$film"=="harrypotter" ]]; then
+  echo -e " ${On_Yellow}Bravo vous avez la baguette jaune${NC} "$cf
+
+
+elif [[ "$film"=="lehobbit" ]]; then
+  echo -e "${UPurple}Bravo vous avez la baguette viollette${NC}"$cf
+
+elif [[ "$film"=="lesanimauxfantastique" ]]; then
+  echo -e "${RED}Bravo vous avez la bagette rouge${NC}"$cf
+
+fi
+echo -e "${UPurple} |\/| |¯ |¯| |¯ |   /¯\   \ | |¯| | | |¯  "
+echo " |  | |¯ |¯\ |_ |   |¯|    \| |_| |_|  ¯| "
+echo "      ¯                                ¯  "
+
